@@ -1,0 +1,30 @@
+<main style="background-color: #fcfcfd;">
+    <section class="py-5 bg-white border-bottom">
+        <div class="container">
+            <h1 class="fw-bolder text-dark mb-3" style="color: #1e293b !important; font-size: 2.5rem;">Catálogo de Cursos</h1>
+            <p class="text-muted mb-0" style="font-size: 1.1rem; max-width: 600px;">
+                Explora todas nuestras experiencias de aprendizaje y encuentra el curso perfecto para llevar tus habilidades al siguiente nivel.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                @if (experiences(); as items) {
+                    @for (item of items; track item.id) {
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <app-experience-card [experience]="item"></app-experience-card>
+                        </div>
+                    }
+                } @else {
+                    <div class="col-12 text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</main>

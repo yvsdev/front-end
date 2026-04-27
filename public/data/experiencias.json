@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "categoria": "Tecnología",
+    "ranking": 4.9,
+    "resenas": 124,
+    "titulo": "Bootcamp de Desarrollo Web",
+    "descripcion": "Aprende a programar desde cero y crea tu primera aplicación web en este intensivo bootcamp.",
+    "horas": 40,
+    "costo": 150,
+    "imagen": "https://picsum.photos/seed/tecnologa1/600/400"
+  },
+  {
+    "id": 2,
+    "categoria": "Arte",
+    "ranking": 4.8,
+    "resenas": 89,
+    "titulo": "Curso de Pintura al Óleo",
+    "descripcion": "Domina las técnicas clásicas y crea obras impresionantes paso a paso.",
+    "horas": 20,
+    "costo": 65,
+    "imagen": "https://picsum.photos/seed/arte2/600/400"
+  },
+  {
+    "id": 3,
+    "categoria": "Música",
+    "ranking": 4.7,
+    "resenas": 45,
+    "titulo": "Producción Musical con Ableton",
+    "descripcion": "Aprende a producir, mezclar y masterizar tus propios tracks con calidad profesional.",
+    "horas": 30,
+    "costo": 90,
+    "imagen": "https://picsum.photos/seed/msica3/600/400"
+  },
+  {
+    "id": 4,
+    "categoria": "Tecnología",
+    "ranking": 4.6,
+    "resenas": 200,
+    "titulo": "Introducción a Python",
+    "descripcion": "El mejor lenguaje para empezar en el mundo de los datos y el backend.",
+    "horas": 15,
+    "costo": 40,
+    "imagen": "https://picsum.photos/seed/tecnologa4/600/400"
+  },
+  {
+    "id": 5,
+    "categoria": "Arte",
+    "ranking": 4.5,
+    "resenas": 34,
+    "titulo": "Fotografía Digital Básica",
+    "descripcion": "Saca el máximo provecho a tu cámara con conceptos clave de luz.",
+    "horas": 10,
+    "costo": 35,
+    "imagen": "https://picsum.photos/seed/arte5/600/400"
+  },
+  {
+    "id": 6,
+    "categoria": "Música",
+    "ranking": 4.4,
+    "resenas": 76,
+    "titulo": "Taller de Guitarra Clásica",
+    "descripcion": "Conoce los fundamentos de la guitarra clásica y mejora tu técnica.",
+    "horas": 25,
+    "costo": 50,
+    "imagen": "https://picsum.photos/seed/msica6/600/400"
+  },
+  {
+    "id": 7,
+    "categoria": "Tecnología",
+    "ranking": 4.5,
+    "resenas": 150,
+    "titulo": "Machine Learning Intermedio",
+    "descripcion": "Adéntrate en los algoritmos más usados de la inteligencia artificial.",
+    "horas": 50,
+    "costo": 180,
+    "imagen": "https://picsum.photos/seed/tecnologa7/600/400"
+  },
+  {
+    "id": 8,
+    "categoria": "Arte",
+    "ranking": 4.3,
+    "resenas": 22,
+    "titulo": "Escultura en Arcilla",
+    "descripcion": "Manos a la obra: aprende a modelar figuras tridimensionales.",
+    "horas": 12,
+    "costo": 45,
+    "imagen": "https://picsum.photos/seed/arte8/600/400"
+  },
+  {
+    "id": 9,
+    "categoria": "Música",
+    "ranking": 4.6,
+    "resenas": 58,
+    "titulo": "Teoría Musical para Productores",
+    "descripcion": "Todo lo que necesitas saber de escalas y acordes para producir mejor.",
+    "horas": 18,
+    "costo": 60,
+    "imagen": "https://picsum.photos/seed/msica9/600/400"
+  },
+  {
+    "id": 10,
+    "categoria": "Tecnología",
+    "ranking": 4.7,
+    "resenas": 110,
+    "titulo": "Diseño UX/UI Avanzado",
+    "descripcion": "Crea interfaces centradas en el usuario con las últimas tendencias.",
+    "horas": 35,
+    "costo": 120,
+    "imagen": "https://picsum.photos/seed/tecnologa10/600/400"
+  },
+  {
+    "id": 11,
+    "categoria": "Arte",
+    "ranking": 4.4,
+    "resenas": 41,
+    "titulo": "Acuarela sobre papel",
+    "descripcion": "Técnicas fluidas para paisajes y retratos con acuarelas.",
+    "horas": 15,
+    "costo": 30,
+    "imagen": "https://picsum.photos/seed/arte11/600/400"
+  },
+  {
+    "id": 12,
+    "categoria": "Música",
+    "ranking": 4.5,
+    "resenas": 67,
+    "titulo": "Composición de Canciones",
+    "descripcion": "Estructura tus ideas y escribe letras que conecten con la audiencia.",
+    "horas": 20,
+    "costo": 55,
+    "imagen": "https://picsum.photos/seed/msica12/600/400"
+  },
+  {
+    "id": 13,
+    "categoria": "Tecnología",
+    "ranking": 4.8,
+    "resenas": 140,
+    "titulo": "Godot Engine para Indie Games",
+    "descripcion": "Crea tu primer juego 2D usando Godot y GDScript.",
+    "horas": 45,
+    "costo": 100,
+    "imagen": "https://picsum.photos/seed/tecnologa13/600/400"
+  },
+  {
+    "id": 14,
+    "categoria": "Arte",
+    "ranking": 4.2,
+    "resenas": 19,
+    "titulo": "Historia del Arte Moderno",
+    "descripcion": "Un recorrido desde el impresionismo hasta el arte conceptual.",
+    "horas": 10,
+    "costo": 25,
+    "imagen": "https://picsum.photos/seed/arte14/600/400"
+  },
+  {
+    "id": 15,
+    "categoria": "Música",
+    "ranking": 4.6,
+    "resenas": 95,
+    "titulo": "Masterclass de Canto",
+    "descripcion": "Mejora tu respiración, tono y proyección vocal.",
+    "horas": 16,
+    "costo": 80,
+    "imagen": "https://picsum.photos/seed/msica15/600/400"
+  }
+]

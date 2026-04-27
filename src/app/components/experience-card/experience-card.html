@@ -1,0 +1,17 @@
+<div class="exp-card">
+    <div class="exp-card__img-wrapper">
+        <img [src]="experience().imagen" [alt]="experience().categoria" class="exp-card__img">
+        <span class="exp-card__badge-category">{{ experience().categoria }}</span>
+        <span class="exp-card__badge-rating">
+            <i class="fa-solid fa-star text-warning"></i> {{ experience().ranking }} ({{ experience().resenas }})
+        </span>
+    </div>
+    <div class="exp-card__body">
+        <h5 class="exp-card__title">{{ experience().titulo }}</h5>
+        <p class="exp-card__desc">{{ experience().descripcion }}</p>
+        <div class="exp-card__footer">
+            <span class="exp-card__duration"><i class="fa-regular fa-clock me-1"></i>{{ experience().horas }} h</span>
+            <span class="exp-card__price">${{ experience().costo }}</span>
+        </div>
+    </div>
+</div>

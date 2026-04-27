@@ -1,0 +1,129 @@
+<main style="background-color: #fcfcfd;">
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="contact-hero__title">¿En qué podemos ayudarte?</h1>
+            <p class="contact-hero__subtitle">
+                Si tienes dudas sobre algún curso, proceso de inscripción o necesitas ayuda
+                adicional, estamos aquí para ti.
+            </p>
+        </div>
+    </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-5">
+                    <div class="contact-info-card">
+                        <h2 class="contact-info-card__heading">Información de Contacto</h2>
+                        <div class="contact-info-item">
+                            <div class="contact-info-item__icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="contact-info-item__label">Email</p>
+                                <p class="contact-info-item__detail">Para consultas generales y soporte.</p>
+                                <a href="mailto:hola@eduxplore.com"
+                                    class="contact-info-item__value">hola@eduxplore.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-item__icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="contact-info-item__label">Teléfono</p>
+                                <p class="contact-info-item__detail">Lunes a Viernes, 9am – 6pm (EST).</p>
+                                <a href="tel:+12345678190" class="contact-info-item__value">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-item__icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="contact-info-item__label">Oficinas</p>
+                                <p class="contact-info-item__detail">Visítanos en nuestra sede principal.</p>
+                                <span class="contact-info-item__value">Av. de la Innovación 123, Ciudad Tech.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <label class="contact-form__label" for="cf-nombre">Nombre completo</label>
+                                <input id="cf-nombre" type="text" formControlName="nombre" class="contact-form__input"
+                                    placeholder="Juan Pérez" autocomplete="name">
+                                @if (contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched) {
+                                    <div class="text-danger mt-1 small">
+                                        @if (contactForm.get('nombre')?.hasError('required')) {
+                                            El nombre es obligatorio.
+                                        }
+                                        @if (contactForm.get('nombre')?.hasError('minlength')) {
+                                            Debe tener al menos 3 caracteres.
+                                        }
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label class="contact-form__label" for="cf-email">Correo electrónico</label>
+                                <input id="cf-email" type="email" formControlName="email" class="contact-form__input"
+                                    placeholder="juan@ejemplo.com" autocomplete="email">
+                                @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                                    <div class="text-danger mt-1 small">
+                                        @if (contactForm.get('email')?.hasError('required')) {
+                                            El correo electrónico es obligatorio.
+                                        }
+                                        @if (contactForm.get('email')?.hasError('email')) {
+                                            Ingrese un correo válido.
+                                        }
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-12">
+                                <label class="contact-form__label" for="cf-asunto">Asunto</label>
+                                <input id="cf-asunto" type="text" formControlName="asunto" class="contact-form__input"
+                                    placeholder="Consulta sobre el taller de arte">
+                                @if (contactForm.get('asunto')?.invalid && contactForm.get('asunto')?.touched) {
+                                    <div class="text-danger mt-1 small">
+                                        @if (contactForm.get('asunto')?.hasError('required')) {
+                                            El asunto es obligatorio.
+                                        }
+                                        @if (contactForm.get('asunto')?.hasError('minlength')) {
+                                            Debe tener al menos 5 caracteres.
+                                        }
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-12">
+                                <label class="contact-form__label" for="cf-mensaje">Mensaje</label>
+                                <textarea id="cf-mensaje" formControlName="mensaje" class="contact-form__input contact-form__textarea"
+                                    placeholder="¿En qué te podemos ayudar?"></textarea>
+                                @if (contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched) {
+                                    <div class="text-danger mt-1 small">
+                                        @if (contactForm.get('mensaje')?.hasError('required')) {
+                                            El mensaje es obligatorio.
+                                        }
+                                        @if (contactForm.get('mensaje')?.hasError('minlength')) {
+                                            Debe tener al menos 20 caracteres.
+                                        }
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="contact-form__btn" [disabled]="contactForm.invalid || isSubmitting()">
+                                    @if (isSubmitting()) {
+                                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                        Enviando...
+                                    } @else {
+                                        <i class="fa-solid fa-paper-plane me-2"></i> Enviar Mensaje
+                                    }
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

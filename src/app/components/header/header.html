@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom" style="padding: 0.85rem 0;">
+      <div class="container-fluid px-4 px-lg-5">
+          <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-dark" routerLink="/"
+              style="font-size: 1.1rem;">
+              <i class="fa-solid fa-book-open" style="color: #5a4bda;"></i> EduXplore
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto gap-1">
+                  <li class="nav-item">
+                      <a class="nav-link fw-medium" routerLink="/catalogo" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="color: #334155;">
+                          Catálogo de Cursos
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link fw-medium" routerLink="/gestion" routerLinkActive="active" style="color: #334155;">
+                          Gestión
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link fw-medium d-flex align-items-center gap-1" routerLink="/contacto" routerLinkActive="active" style="color: #334155;">
+                          Contacto
+                      </a>
+                  </li>
+              </ul>
+              <div class="d-flex">
+                  <a href="#"
+                      class="btn btn-outline-secondary rounded-pill px-4 py-2 d-flex align-items-center gap-2 fw-medium"
+                      style="font-size: 0.9rem; border-color: #cbd5e1; color: #334155;">
+                      <i class="fa-solid fa-arrow-right-to-bracket" style="color: #5a4bda;"></i> Iniciar Sesión
+                  </a>
+              </div>
+          </div>
+      </div>
+  </nav>
+</header>
+
