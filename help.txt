@@ -1,0 +1,129 @@
+# Documentación del Proyecto Frontend en Angular
+
+Este documento describe la arquitectura, los componentes y la implementación del proyecto frontend migrado a Angular. El objetivo del proyecto fue transformar un sitio web estático en una aplicación Angular moderna y modular.
+
+## 1. Comandos Ejecutados para la Creación del Proyecto
+
+A continuación, se listan los comandos principales de Angular CLI (Command Line Interface) que se utilizaron para generar la estructura básica del proyecto, incluyendo páginas, componentes y servicios.
+
+### Inicialización del Proyecto
+```bash
+# Creación del nuevo proyecto Angular
+ng new front-end
+```
+
+### Generación de Páginas (Vistas principales)
+Se crearon diferentes componentes para manejar las rutas principales de la aplicación:
+```bash
+ng generate component pages/home
+ng generate component pages/catalog
+ng generate component pages/manage-catalog
+ng generate component pages/contact
+```
+
+### Generación de Componentes Reutilizables
+Para mantener un diseño modular, se crearon componentes compartidos:
+```bash
+ng generate component components/header
+ng generate component components/footer
+ng generate component components/experience-card
+```
+
+### Generación de Servicios
+Los servicios se utilizan para la lógica de negocio y comunicación con la API/Backend (como las operaciones CRUD del catálogo):
+```bash
+ng generate service services/experience
+ng generate service services/contact
+```
+
+---
+
+## 2. Implementación de Enrutamiento (Routing)
+
+Angular utiliza un enrutador para navegar entre las diferentes páginas. La configuración de las rutas se encuentra centralizada en `app.routes.ts`.
+
+### Fragmento de Código: `src/app/app.routes.ts`
+```typescript
+import { Routes } from '@angular/router';
+import { Home } from './pages/home/home';
+import { Contact } from './pages/contact/contact';
+import { Catalog } from './pages/catalog/catalog';
+import { ManageCatalog } from './pages/manage-catalog/manage-catalog';
+
+export const routes: Routes = [
+  { path: '', component: Home },
+  { path: 'catalogo', component: Catalog },
+  { path: 'gestion', component: ManageCatalog },
+  { path: 'contacto', component: Contact },
+  { path: '**', redirectTo: '' } // Ruta comodín para redirigir al Home si la ruta no existe
+];
+```
+
+---
+
+## 3. Implementación de Servicios HTTP (CRUD)
+
+El proyecto utiliza `HttpClient` de Angular para interactuar con un backend local. El servicio `ExperienceService` maneja la lógica para consultar y modificar el catálogo de experiencias.
+
+### Fragmento de Código: `src/app/services/experience.ts`
+```typescript
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export interface ExperienceItem {
+  id: number;
+  categoria: string;
+  ranking: number;
+  resenas: number;
+  titulo: string;
+  descripcion: string;
+  horas: number;
+  costo: number;
+  imagen: string;
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ExperienceService {
+  private http = inject(HttpClient);
+  private apiUrl = '/api/experiencias';
+
+  getExperiences(): Observable<ExperienceItem[]> {
+    return this.http.get<ExperienceItem[]>(this.apiUrl);
+  }
+
+  getTopExperiences(limit: number = 3): Observable<ExperienceItem[]> {
+    return this.getExperiences().pipe(
+      map(experiences => 
+        [...experiences].sort((a, b) => b.ranking - a.ranking).slice(0, limit)
+      )
+    );
+  }
+
+  createExperience(experience: ExperienceItem): Observable<ExperienceItem> {
+    return this.http.post<ExperienceItem>(this.apiUrl, experience);
+  }
+
+  updateExperience(id: number, experience: ExperienceItem): Observable<ExperienceItem> {
+    return this.http.put<ExperienceItem>(`${this.apiUrl}/${id}`, experience);
+  }
+
+  deleteExperience(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+}
+```
+
+---
+
+## 4. Estructura de Directorios
+
+La estructura de carpetas resultante dentro de `src/app/` es la siguiente:
+- `/components`: Componentes visuales reutilizables (`header`, `footer`, `experience-card`).
+- `/pages`: Componentes que actúan como vistas de página completa asociadas a una ruta.
+- `/services`: Clases que encapsulan la lógica de acceso a datos y comunicación con la API.
+
+Esta separación facilita el mantenimiento, las pruebas unitarias y la escalabilidad del proyecto front-end.
